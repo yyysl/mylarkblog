@@ -1,0 +1,12 @@
+{
+  "name": "my-feishu-blog",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "feishu-pages && vitepress dev docs",
+    "build": "feishu-pages && vitepress build docs"
+  },
+  "dependencies": {
+    "feishu-pages": "^1.2.0",
+    "vitepress": "^1.0.0"
+  }
+}
