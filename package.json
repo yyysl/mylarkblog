@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "feishu-pages && vitepress dev docs",
-    "build": "export FEISHU_API_HOST=https://open.larksuite.com && feishu-pages && vitepress build docs"
+    "build": "grep -rl 'open.feishu.cn' node_modules/feishu-pages | xargs sed -i 's/open.feishu.cn/open.larksuite.com/g' && feishu-pages && vitepress build docs"
   },
   "dependencies": {
     "feishu-pages": "latest",
