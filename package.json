@@ -6,7 +6,7 @@
     "build": "feishu-pages && vitepress build docs"
   },
   "dependencies": {
-    "feishu-pages": "^1.2.0",
+    "feishu-pages": "latest",
     "vitepress": "^1.0.0"
   }
 }
