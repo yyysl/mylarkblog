@@ -1,14 +1,17 @@
 const path = require('path');
 
 module.exports = {
-  docs: 'docs',
+  // 1. 凭证部分：严格从 Vercel 环境变量读取（安全，不写死）
   appId: process.env.FEISHU_APP_ID,
   appSecret: process.env.FEISHU_APP_SECRET,
   spaceId: process.env.FEISHU_SPACE_ID,
   
-  // 👇 关键修正：强制指定这里是国际版 Lark，不再去连国内飞书了
+  // 2. 路径部分：核心修正！
+  // 为了防止工具犯蠢，我们同时设置 baseUrl 和 endpoint
+  // 逻辑是：优先读环境变量，读不到直接用 Lark 国际版地址，绝不让它回退到 feishu.cn
   baseUrl: process.env.FEISHU_BASE_URL || 'https://open.larksuite.com', 
+  endpoint: process.env.FEISHU_BASE_URL || 'https://open.larksuite.com',
   
-  // 忽略不需要的属性，防止报错
+  docs: 'docs',
   output: path.join(__dirname, 'docs'),
 }
