@@ -2,8 +2,9 @@
   "name": "my-feishu-blog",
   "version": "1.0.0",
   "scripts": {
+    "postinstall": "node patch.js", 
     "dev": "feishu-pages && vitepress dev docs",
-    "build": "grep -rl 'open.feishu.cn' node_modules/feishu-pages | xargs sed -i 's/open.feishu.cn/open.larksuite.com/g' && feishu-pages && vitepress build docs"
+    "build": "feishu-pages && vitepress build docs"
   },
   "dependencies": {
     "feishu-pages": "latest",
